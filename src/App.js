@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PayPalPay from './component/PayPalPay'
+import Home from './component/Home';
+import Tech from './component/Tech';
+import Footer from './component/Footer';
+import Buynow from './component/Buynow';
+import Countdown from './component/Count';
 
-function App() {
+export default function App() {
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/payment" element={<PayPalPay/>}/>
+          <Route path= "/tech&features" element={<Tech/>}/>
+          <Route path="/iphone-checkout" element={<Buynow/>}/>
+          <Route path="/counting" element={<Countdown/>}/>
+      </Routes>
+      <Footer/>
+    </Router>
+  )
 }
-
-export default App;
