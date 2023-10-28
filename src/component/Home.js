@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
 import {BsChevronDown} from "react-icons/bs";
-import iphone from "../component/iphoness.jpg"
+import phone from "../component/iphoness.jpg"
 
 export default function Home() {
 
 
-  const [showVideo, setShowVideo] = useState(true);
-  const [videoOpacity, setVideoOpacity] = useState(1);
+  const [ setShowVideo] = useState(true);
+  const [setVideoOpacity] = useState(1);
   const [imageOpacity, setImageOpacity] = useState(0);
     // const [showVideo, setShowVideo] = useState(true);
     //  const [imageOpacity, setImageOpacity] = useState(0);
@@ -48,7 +47,7 @@ export default function Home() {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, );
 
 
   //   useEffect(() => {
@@ -117,32 +116,13 @@ export default function Home() {
         <div className=' lg:px-48 md:px-20 bg-black lg:py-5 py-3 flex flex-col px-3'>
           <div className=' mt-20 mb-16 flex justify-center items-center lg:justify-between text-white'>
             <p className='font-semibold lg:text-7xl text-5xl'>Pro.Beyond</p>
-            <p className='hidden lg:flex'>Grey</p>
+            <p className='hidden lg:flex'></p>
           </div>
           <div className='flex justify-center w-full'>
-            {showVideo ? (
-              <ReactPlayer
-                url="https://www.apple.com/105/media/ww/iphone-14-pro/2023/b094f6e4-dcdb-494f-bd72-45d659126dcd/anim/hero/large_2x.mp4"
-                playing
-                muted
-                loop
-                width="100%"
-                height="100%"
-                 style={{ opacity: videoOpacity, transition: 'opacity 1s ease-in-out' }}
-              />
-            ) : (
-              <img
-                className='w-full h-full'
-                src={iphone}
-                alt="Banner Image"
-                style={{ opacity: imageOpacity, transition: 'opacity 2s ease-in-out' }}
-                // className="w-full h-full object-cover"
-              />
-            )}
-            {/* <img className='w-[100%] h-72 lg:h-full' src='https://www.lifehacker.com.au/wp-content/uploads/2022/09/08/c10a10e62e4306968a47401658c23926.png?quality=75&w=640&h=360&crop=1' alt='iphone 14'/> */}
+            <img src={phone} className='w-full h-full' style={{ opacity: imageOpacity, transition: 'opacity 0.5s ease-in-out' }} alt="BannerImage"/>
           </div>
           <div className='text-white flex flex-col items-center mt-5 lg:hidden'>
-            <p>Grey</p>
+            <p> </p>
             <div className='flex gap-2'>
               <div className='w-5 h-5 rounded-full bg-[#594f63]'></div>
               <div className='w-5 h-5 rounded-full bg-[#f4e8ce]'></div>

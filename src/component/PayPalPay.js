@@ -9,7 +9,6 @@ export default function PayPalPay() {
   const [errorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
   const [credents, setCredents] = useState("")
-  const [cost, setCost] = useState("")
 
    const [backendData, setBackendData] = useState([])
 
@@ -20,7 +19,6 @@ export default function PayPalPay() {
             data => {
                 setBackendData(data)
                 setCredents(backendData.clientId)
-                setCost(backendData.price)
                 
             }
             )
