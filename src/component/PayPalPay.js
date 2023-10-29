@@ -12,7 +12,7 @@ export default function PayPalPay() {
    const [backendData, setBackendData] = useState([])
 
     useEffect(() => {
-        fetch("iphone14promax-api-production.up.railway.app").then (
+        fetch("iphone14promax-api.railway.internal").then (
             response => response.json()
         ).then(
             data => {
