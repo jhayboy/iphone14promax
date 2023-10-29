@@ -4,16 +4,15 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
  
 export default function PayPalPay() {
   // const navigate = useNavigate()
-  const [show, setShow] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [orderID, setOrderID] = useState(false);
+  const [setSuccess] = useState(false);
+  const [setErrorMessage] = useState("");
+  const [setOrderID] = useState(false);
   const [credents, setCredents] = useState("")
 
    const [backendData, setBackendData] = useState([])
 
     useEffect(() => {
-        fetch("/api").then (
+        fetch("iphone14promax-api-production.up.railway.app").then (
             response => response.json()
         ).then(
             data => {
@@ -22,7 +21,7 @@ export default function PayPalPay() {
                 
             }
             )
-    } ,[])
+    })
           
    const createOrder = (data, actions) => {
    return actions.order 
@@ -51,7 +50,7 @@ export default function PayPalPay() {
  // check Approval
  const onApprove = (data, actions) => {
    return actions.order.capture().then(function (details) {
-     const { payer } = details;
+     
      setSuccess(true);
     //  navigate('/success')
    });

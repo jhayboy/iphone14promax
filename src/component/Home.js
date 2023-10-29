@@ -6,8 +6,6 @@ import phone from "../component/iphoness.jpg"
 export default function Home() {
 
 
-  const [ setShowVideo] = useState(true);
-  const [setVideoOpacity] = useState(1);
   const [imageOpacity, setImageOpacity] = useState(0);
     // const [showVideo, setShowVideo] = useState(true);
     //  const [imageOpacity, setImageOpacity] = useState(0);
@@ -26,11 +24,7 @@ export default function Home() {
     useEffect(() => {
     // Automatically end the video after 4 seconds
     const timer = setTimeout(() => {
-      const videoOpacityTimer = setInterval(() => {
-        setVideoOpacity((prevOpacity) =>
-          prevOpacity - 0.1 <= 0 ? 0 : prevOpacity - 0.1
-        );
-      }, 20);
+      
       // Gradually increase the image opacity over 2 seconds
       const opacityTimer = setInterval(() => {
         setImageOpacity((prevOpacity) =>
@@ -40,10 +34,8 @@ export default function Home() {
       // Clear the opacity timer after 2 seconds
       setTimeout(() => {
         clearInterval(opacityTimer);
-        clearInterval(videoOpacityTimer);
-        setShowVideo(false);
       }, 1000);
-    }, 4000);
+    }, 1000);
     return () => {
       clearTimeout(timer);
     };
