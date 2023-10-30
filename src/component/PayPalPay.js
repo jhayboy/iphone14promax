@@ -20,7 +20,7 @@ export default function PayPalPay() {
               setCredents(data.clientId); // Extract clientId from data and set it in credents
             console.log(credents)
           });
-    }, [credents]);
+    }, []);
           
   //  const createOrder = (data, actions) => {
   //     return actions.order 
