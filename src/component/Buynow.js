@@ -46,7 +46,7 @@ export default function Buynow() {
         calculateTimeRemaining();
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, );
     
     
 

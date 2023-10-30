@@ -6,46 +6,68 @@ export default function PayPalPay() {
   // const navigate = useNavigate()
   const [setSuccess] = useState(false);
   const [setErrorMessage] = useState("");
-  const [setOrderID] = useState(false);
+  const [orderID, setOrderID] = useState("");
   const [credents, setCredents] = useState("")
 
-   const [backendData, setBackendData] = useState([])
+   const [backendData, setBackendData] = useState({});
+  //  console.log(credents)
 
     useEffect(() => {
-        fetch("iphone14promax-api.railway.internal").then (
-            response => response.json()
-        ).then(
-            data => {
-                setBackendData(data)
-                setCredents(backendData.clientId)
-                
-            }
-            )
-    })
+      fetch("/api")
+          .then(response => response.json())
+          .then(data => {
+              setBackendData(data); // Set the entire backendData object
+              setCredents(data.clientId); // Extract clientId from data and set it in credents
+            console.log(credents)
+          });
+    }, [credents]);
           
-   const createOrder = (data, actions) => {
-   return actions.order 
-     .create({
-       purchase_units: [
-         {
-           description: "Sunflower",
-           amount: {
-             currency_code: "USD",
-             value: 499.99,
-           },
-         },
-       ],
-       // not needed if a shipping address is actually needed
-       application_context: {
-         shipping_preference: "NO_SHIPPING",
-       },
-     })
-     .then((orderID) => {
-       setOrderID(orderID);
-       return orderID;
+  //  const createOrder = (data, actions) => {
+  //     return actions.order 
+  //       .create({
+  //         purchase_units: [
+  //           {
+  //             description: "iPhone 14 Pro Max",
+  //             amount: {
+  //               currency_code: "USD",
+  //               value: 499.99,
+  //             },
+  //           },
+  //         ],
+  //         // not needed if a shipping address is actually needed
+  //         application_context: {
+  //           shipping_preference: "NO_PREFERENCE",
+  //         },
+  //       })
+  //       .then((orderID) => {
+  //         setOrderID(orderID); // Update the state with the order ID
+  //         return orderID;
 
-     });
- };
+  //       });
+  //   };
+
+
+      const createOrder = (data, actions) => {
+        return actions.order.create({
+            purchase_units: [
+                {
+                    description: "iPhone 14 Pro Max",
+                    amount: {
+                        currency_code: "USD",
+                        value: 499.99,
+                    },
+                },
+              ],
+              // application_context: {    
+              //   shipping_preference: "NO_PREFERENCE",
+              // },
+        }).then((orderID) => {
+                setOrderID(orderID);
+                return orderID;
+            });
+    };
+
+
  
  // check Approval
  const onApprove = (data, actions) => {
@@ -61,7 +83,7 @@ export default function PayPalPay() {
  };
 
    return (
-       <PayPalScriptProvider options={{ "client-id":  credents}}>
+       <PayPalScriptProvider options={{ "client-id": credents}}>
            <PayPalButtons 
             createOrder={createOrder}
             onApprove={onApprove}
