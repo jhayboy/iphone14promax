@@ -18,7 +18,6 @@ export default function PayPalPay() {
           .then(data => {
               setBackendData(data); // Set the entire backendData object
               setCredents(data.clientId); // Extract clientId from data and set it in credents
-            console.log(credents)
           });
     }, []);
           
