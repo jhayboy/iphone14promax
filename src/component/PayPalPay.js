@@ -13,7 +13,7 @@ export default function PayPalPay() {
   //  console.log(credents)
 
     useEffect(() => {
-      fetch("/api")
+      fetch("https://iphone14promax-api.up.railway.app/api")
           .then(response => response.json())
           .then(data => {
               setBackendData(data); // Set the entire backendData object
