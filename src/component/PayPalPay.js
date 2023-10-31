@@ -82,7 +82,7 @@ export default function PayPalPay() {
  };
 
    return (
-       <PayPalScriptProvider options={{ "client-id": credents}}>
+       <PayPalScriptProvider options={{ "client-id": "AQ-fIALxm8-YxlPbHyq7SstQ8FH-ImkrjVWwsr-n8SFfx3aW9KsOlhKFd-xUE9yFATIfqJwGO4blxkrg"}}>
            <PayPalButtons 
             createOrder={createOrder}
             onApprove={onApprove}
