@@ -20,7 +20,7 @@ export default function Buynow() {
     const [minutes, setMinutes ] = useState("")
     const [seconds, setSeconds ] = useState("")
 
-    const countDownDate = new Date("Nov 10, 2023 00:00:00").getTime();
+    const countDownDate = new Date("Nov 22, 2023 00:00:00").getTime();
     const countdownInterval = 1000;
 
     const calculateTimeRemaining = () => {
