@@ -9,6 +9,7 @@ import {LuWallet} from 'react-icons/lu'
 import {CiWarning} from 'react-icons/ci'
 import {BsDot} from "react-icons/bs"
 import PayPalPay from './PayPalPay'
+import StaticReview from './review'
 
 
 export default function Buynow() {
@@ -197,14 +198,16 @@ export default function Buynow() {
                         <button onClick={showReview} className={!review ? "" : "text-gray-400"}>Reviews</button>
                     </div>
                     
-                    {review ? <div>
-                        <div>
+                    {review ? 
+                    <div>
+                        {/* <div>
                             <div>
-                                <img src='' alt=''/>
-                                <p> Jesse Hopkins</p>
-                            </div>
-                        <p></p>
-                        </div>
+                                    <img src='' alt=''/>
+                                    <p> Jesse Hopkins</p>
+                                </div>
+                            <p></p>
+                        </div> */}
+                        <StaticReview/>
                     </div> : <div className='p-2 lg:p-5 flex flex-col gap-5'>
                         <p className='text-3xl'>Apple iPhone 14 Pro Max 256GB</p>
                         <ul>
