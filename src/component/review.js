@@ -32,11 +32,40 @@ const StaticReview = () => {
     <div className="bg-black p-4 rounded-lg shadow-md mb-4 flex flex-col gap-3">
       
 
+
       <div>
             <div className="flex justify-between items-center ">
                
                 <div className="text-white flex items-center gap-2">
-                    <div className="rounded-full bg-green-400 p-2 w-10 h-10 text-center">
+                    <div className="rounded-full bg-orange-400 p-2 w-10 h-10 text-center">
+                        <p>T</p>
+                    </div>
+                    <div>
+                        <h3 className="text-sm font-semibold ">Thomas William</h3>
+                        <p className="text-xs">11-10-23</p>
+                    </div>
+                </div>
+                <div className="flex items-center">
+                <span className="text-yellow-500 mr-1 flex gap-1">
+                    <AiFillStar/>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                </span>
+                <span className="text-gray-500">(5.0)</span>
+                </div>
+            </div>
+            <p className="mt-2 text-gray-500 text-sm">
+               To anyone hesitating, don't!! I got mine, and it's a game changer. Act fast before this incredible deal disappears.
+            </p>
+        </div>
+
+      <div>
+            <div className="flex justify-between items-center ">
+               
+                <div className="text-white flex items-center gap-2">
+                    <div className="rounded-full bg-blue-400 p-2 w-10 h-10 text-center">
                         <p>Q</p>
                     </div>
                     <div>
@@ -77,11 +106,11 @@ const StaticReview = () => {
                 <span className="text-yellow-500 mr-1 flex gap-1">
                     <AiFillStar/>
                     <AiFillStar/>
-                    <AiFillStar/>
+                    <AiFillStar className="text-gray-500"/>
                     <AiFillStar className="text-gray-500"/>
                     <AiFillStar className="text-gray-500"/>
                 </span>
-                <span className="text-gray-500">(3.0)</span>
+                <span className="text-gray-500">(2.0)</span>
                 </div>
             </div>
             <p className="mt-2 text-gray-500 text-sm">
@@ -114,7 +143,7 @@ const StaticReview = () => {
                 </div>
             </div>
             <p className="mt-2 text-gray-500 text-sm">
-                I was skeptical at first, but this website delivered on its promise. A phone worth $1000 for $499? Count me in! 😍
+                I was skeptical at first, but this website delivered on its promise. $499? Count me in! 😍
             </p>
         </div>
 
