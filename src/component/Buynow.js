@@ -130,7 +130,7 @@ export default function Buynow() {
                                 </div>
                                 <div className={quantity ? 'hidden' : 'flex gap-3 mb-3'}>
                                     <CiWarning className='text-yellow-400 text-xl'/>
-                                    <p className='text-sm'>Quantity is fixed at 1unit per customer</p>  
+                                    <p className='text-sm'>Quantity is fixed at 1 unit per customer</p>  
                                 </div>
                             </div>
                             <PayPalPay/>
